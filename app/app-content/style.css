@@ -1,0 +1,201 @@
+
+		.ta-editor {
+			min-height: 300px;
+			height: 330px;
+			overflow: auto;
+			font-family: inherit;
+			font-size: 100%;
+			width: 712px;
+		}
+		
+		.btn-toolbar {
+			width: 735px;
+		}
+	
+		.flex-container {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-flow: row wrap;
+			flex-flow: row wrap;
+			text-align: center;
+		}
+
+		.flex-container > * {
+			padding: 15px;
+			-webkit-flex: 1 100%;
+			flex: 1 100%;
+		}
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+		.article {
+			text-align: left;
+		}
+
+		header {background: white; height:50px}
+		footer {background: black;color:white;}
+		
+		.nav {background:#808080; }
+		
+		label {font-family:Palatino Linotype;font-size:16px;}  
+		
+		.nav ul {
+			list-style-type: none;
+		 padding: 0;
+		}
+		   
+		.nav ul a {
+		 text-decoration: none;
+		}
+
+		@media all and (min-width: 768px) {
+			.nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+			.article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+			footer {-webkit-order:3;order:3;}
+		}
+		
+/* -----------------------------------Top menu ------------------------------------------------ */
+		
+@import "compass/css3";
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: yellow;
+}
+li {
+  display: block;
+  height: 100%;
+  background: black;
+  color: white;
+  float:left;
+}
+a, span {
+  display: inline-block;
+  padding: 10px 15px;
+  color: currentColor;
+}
+span {
+  display: inline-block;
+  position: relative;
+  background: black;
+  padding-left: 20px;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 100%;
+    background: black;
+    position: absolute;
+    left: 0px;
+    top: 0;    
+    clip-path: polygon(-1px 0, 100% 50%, -1px 100%);
+  }
+} 
+		.glyphicon{margin-left: 800px;}
+		
+/* ---------------------------------------Right menu ------------------------------------ */
+
+nav{
+  float: left; 
+  clear: both;
+  width: 75%; 
+  margin: 10% auto;
+  background: #eee;
+  font-family: 'Shadows Into Light', cursive;
+  font-size:24px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav li{
+	float: none; 
+  width: 100%;
+}
+
+nav li a{
+  display: block; 
+  width: 100%; 
+  padding: 20px; 
+  border-left: 5px solid; 
+  position: relative; 
+  z-index: 2;
+  text-decoration: none;
+  color: #444;
+  box-sizing: border-box;  
+  -moz-box-sizing: border-box;  
+  -webkit-box-sizing: border-box; 
+}
+	
+nav li a:hover{ border-bottom: 0px; color: #fff;}
+nav li:first-child a{ border-left: 10px solid #3498db; }
+nav li:nth-child(2) a{ border-left: 10px solid #ffd071; }
+nav li:nth-child(3) a{ border-left: 10px solid #f0776c; }
+nav li:nth-child(4) a{ border-left: 10px solid #f0776c; }
+
+nav li:last-child a{ border-left: 10px solid #1abc9c; }
+
+nav li a:after { 
+  content: "";
+  height: 100%; 
+  left: 0; 
+  top: 0; 
+  width: 0px;  
+  position: absolute; 
+  transition: all 0.3s ease 0s; 
+  -webkit-transition: all 0.3s ease 0s; 
+  z-index: -1;
+}
+nav li a:hover:after{ width: 100%; }
+nav li:first-child a:after{ background: #1C699C; }
+nav li:nth-child(2) a:after{ background: #B87A00; }
+nav li:nth-child(3) a:after{ background: #FF311F; }
+nav li:nth-child(4) a:after{ background: #B87A00; }
+
+nav li:last-child a:after{ background: #149077; }
+
+}
+
+/*-----------------------------------------------------blog display divider---------------------- */
+.vertical-divider{
+	clear: both;
+	position: relative;
+}
+
+.vertical-divider:after {
+	clear: both;
+	content: " ";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+.vertical-divider .column:not(:first-child):after, .vertical-divider .columns:not(:first-child):after{
+	background: #DDDDDD;
+	bottom: 0;
+	content: " ";
+	margin-left: -10px;
+	position: absolute;
+	top: 0;
+	width: 1px;
+}
+
+/* Very simple grid for example */
+.container { position: relative; width: 960px; margin: 20px auto; padding: 0; }
+
+.container .column, .container .columns { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
+
+.container .one-third.column { width: 300px; }
+
+.container .two-thirds.column { width: 620px; }

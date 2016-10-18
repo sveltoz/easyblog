@@ -1,0 +1,138 @@
+@color-base: white;
+@color-footer: #555;
+@color-back:black;
+@padding: 15px;
+@height: 200px;
+@width: 500px;
+
+.testRight{
+		background-color:@color-back;
+		margin-top: -20px; 
+		height:@height * 8;
+		width:300px;
+		float:right;
+		
+	  h1{
+		   font-size: 25px;
+		   color:#E45456;
+		   text-align:center
+		}
+
+	}
+	
+.testLeft{
+		background-color:@color-back;
+		height:@height * 8;
+		width:@width - 300;
+		float:left;
+
+	}
+
+
+.fancy-text() {
+    font-family: 'Monotype Corsiva';
+    font-style: italic;
+    font-weight: 800;
+}
+
+.class1 {
+	background-color: @color-base;
+	}
+.class2{
+	height: @height;
+	width: @width;
+		}
+h3{
+	 .fancy-text();
+	}
+	
+h4{
+	.fancy-text();
+	}
+
+   /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: white;
+      height: 100%;
+    }
+    
+    
+/* Set black background color, white text and some padding */
+    footer {
+      background-color: @color-footer;
+      color: @color-base;
+      padding: 15px;
+    }
+	
+/* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: @padding;
+      }
+      .row.content {height:auto;}
+    }
+	
+	
+/* ------------------- photo gallaery ------------------- */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.gallery {
+  width: 220px;
+  margin: 0 auto;
+  padding: 5px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+}
+
+.gallery > div {
+  position: relative;
+  float: left;
+  padding: 5px;
+}
+
+.gallery > div > img {
+  display: block;
+  width: 200px;
+  transition: .1s transform;
+  transform: translateZ(0); /* hack */
+}
+
+.gallery > div:hover {
+  z-index: 1;
+}
+
+.gallery > div:hover > img {
+  transform: scale(1.7,1.7);
+  transition: .3s transform;
+}
+
+.cf:before, .cf:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.cf:after {
+  clear: both;
+}
+
+	
+	

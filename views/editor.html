@@ -1,0 +1,116 @@
+
+<div ng-controller="editorController">
+ 
+<div class="row">
+	<div class="col-sm-4"><img ng-src="{{image[3].src}}" style="width: 100%;"  /></div>
+	<div class="col-sm-8"><img ng-src="{{image[2].src}}" style="width: 100%;"  /></div>
+</div>
+<div class="row">
+	<div class="col-sm-4"><h3>Eating in Moderation</h3>Eating ‘bad foods’ in moderation is not a huge problem.
+			
+	</div>
+		
+	<div class="col-sm-8"><h3>How to Teach Your Children Healthy Eating Habits</h3>Child obesity has become truly a grave problem nowadays. Never before have there been more overweight children and that seems, naturally, to trouble their parents...
+			</div>
+</div>
+
+<hr>
+
+<!-- ---------------------------------------------------------------Blog image bar--------------------------------------------------- -->
+ <div style="height:109%; width:120%; ">
+	<img ng-src="{{image[4].src}}" style="height:150px; width:330px;" />
+	<img ng-src="{{image[5].src}}" style="height:150px; width:330px;" />
+	<img ng-src="{{image[6].src}}" style="height:150px; width:330px;" />
+	<img ng-src="{{image[7].src}}" (1).jpg" style="height:150px; width:330px;" />
+</div>
+
+<div >
+	<div class="row">
+	
+	  <div class="col-sm-3">Durga Parameswari Temple at Bappanadu ......<br>
+		
+	  </div>
+	  
+	  <div class="col-sm-3">Trust in your intuitions ...<br>
+		
+	  </div>
+	  
+	  <div class="col-sm-3">Testing the elements....<br>
+		
+	  </div>
+	  
+	  <div class="col-sm-3">Our Favourite Concept Flowers store around the world ...
+		
+	  </div>
+	</div>
+</div>
+<hr>
+<!-- ----------------------------------------------------------------------- -->
+<div style="height: 600px; width:200px;float:left;">
+	<!--<nav>
+		<ul>
+			<li style="background-color:white"><a href="#/">HOME</a></li>
+			<li style="background-color:white"><a href="#"> ABOUT US</a></li>
+			<li style="background-color:white"><a href="#HomePage">PAGES</a></li>
+				</ul>
+	</nav>-->
+			
+ </div>
+
+<div style="height: 600px; width:65%; float:left;">
+           <p style="font-family:Monotype Corsiva; font-size:25px" >There is no good blog without great readability !</p>
+		   
+			<div id="divoutput" ng-repeat="d in output" style="border: 1px solid #eeeee8; padding: 16px 32px;"> 
+				 <a href="#/blogPage?id={{d._id}}"><h3>{{d.blogTitle}}</h3></a><div align="right">Posted By - Ananymous</div>
+				 <hr>
+				 <div style="margin-left: 30px" ng-bind-html="d.blogContents1"></div>
+				 <br/>
+				 
+				  <div align="right">
+                  <button type="button" class="btn btn-default btn-sm" style="color:Red;" onclick="document.getElementById('DivSub').style.display='block'" >
+							Subscribed
+						</button>	
+                        		
+						<button type="button" class="btn btn-default btn-sm" ng-click="blogLikeFun(d)" ng-if="d.UserNotAvaliable" ng-show="d.UserNotAvaliable">
+							<span class="glyphicon glyphicon-thumbs-up" ></span> Like {{d.blogLikes}} 
+						</button>
+                        <button type="button" class="btn btn-default btn-sm" ng-if="!d.UserNotAvailable" ng-show="!d.UserNotAvaliable" disabled>
+							<span class="glyphicon glyphicon-thumbs-up"></span> Like {{d.blogLikes}} 
+						</button>					
+						<a href="#/blogPage?id={{d._id}}">
+						<button type="button" class="btn btn-default btn-sm">
+							<span class="glyphicon glyphicon-comment"></span> Comment
+						</button></a>					
+						
+							<span class="fa fa-facebook-square" style="color:Blue;font-size:large;" ng-click="share(d)"></span>
+                            <span id="tweetShare" class="fa fa-twitter-square" style="color:Red;font-size:large;" ng-click="twitter(d)" ></span>
+						 &nbsp;{{d.blogCreationDate | date:'medium'}}</div>
+
+                        <div id="DivSub" class="modal">
+  
+  <form class="modal-content animate">
+      <div class="modal-header">
+            <button type="button" class="close" title="Close Modal" onclick="document.getElementById('DivSub').style.display='none'"  data-dismiss="modal">x</button>
+            <h3>Subscribed Blog</h3>           
+          </div>
+          <div class="modal-body">
+            <form method="post" action='' name="login_form">
+              <p><input type="text" class="span3" name="eid" id="emailForSub" placeholder="Email"></p>
+               <p><button type="submit" class="btn btn-primary" id="subscribe" ng-click="SubscribeMethos(d)">Subscribe</button>
+                    </p>
+            </form>
+          </div>
+          
+  </form>
+</div>
+				 <br/>
+			</div >
+			
+</div>
+
+</div>
+
+
+ 
+
+ 

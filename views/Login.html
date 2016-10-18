@@ -1,0 +1,37 @@
+﻿<div ng-controller="loginController">
+     <form class="modal-content animate">
+      <div class="modal-header">
+            <button type="button" class="close" title="Close Modal" onclick="document.getElementById('id01').style.display='none'"  data-dismiss="modal">x</button>
+            <h3>Login to MyWebsite.com</h3>
+           
+          </div>
+          <div class="modal-body">
+            <form name="login_form">
+              <p><input type="text" class="span3" name="eid" id="email11" placeholder="Email"></p>
+              <p><input type="password" class="span3" name="passwd" id="password11" placeholder="Password"></p>
+              <p><button type="submit" class="btn btn-primary" id="signin" ng-click="LoginUp()">Sign in</button>
+                <a href="#" onclick="document.getElementById('divPass').style.display='block'">Forgot Password?</a>
+              </p>
+            </form>
+          </div>
+          
+  </form>
+
+
+  <form class="modal-content animate">
+      <div class="modal-header">
+            <button type="button" class="close" title="Close Modal" onclick="document.getElementById('divPass').style.display='none'"  data-dismiss="modal">x</button>
+            <h3>Forgot Password!!!</h3>
+           
+          </div>
+          <div class="modal-body">
+            <form name="login_form1222" method="post">
+              <p><input type="text" class="span3" name="eid" id="Text11" placeholder="Email"></p>
+               <p><button type="submit" class="btn btn-primary" id="Button1122" ng-click="SendPassword()">Send</button>
+                    </p>
+            </form>
+          </div>
+          
+  </form>
+ 
+</div>

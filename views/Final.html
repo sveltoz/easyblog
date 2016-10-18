@@ -1,0 +1,140 @@
+<!--<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300">
+	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js'></script>
+    <script src='http://textangular.com/dist/textAngular-rangy.min.js'></script>
+    <script src='http://textangular.com/dist/textAngular-sanitize.min.js'></script> 
+    <script src='http://textangular.com/dist/textAngular.min.js'></script>    
+    <script src="../bower_components/ng-file-upload/ng-file-upload.js" type="text/javascript"></script>
+    <link href='\app\app-content\style.css' rel='stylesheet' type='text/css'>
+
+</head>-->
+
+<div ng-controller="finalController">
+
+<!-- ---------------------------------------------------------------Title bar------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------Blog image bar--------------------------------------------------- -->
+ <div style="height:150px; width:1350px; ">
+	<img style="height:150px; width:330px;"  src="../app/app-images/opportunities.png" />
+	<img style="height:150px; width:330px;"  src="../app/app-images/hd-wallpaper-free-download-40.jpg" />
+	<img  style="height:150px; width:330px;" src="../app/app-images/images%20(1).jpg" />
+	<img style="height:150px; width:330px;"  src="../app/app-images/images.jpg" />
+</div>
+
+<div style="background-color:black;color:white;">
+	<div class="row">
+	  <div class="col-sm-3">Working from your home</div>
+	  <div class="col-sm-3">Trust in your intuitions ...</div>
+	  <div class="col-sm-3">Testing the elements....</div>
+	  <div class="col-sm-3">Our Favourite Concept Flowers store around the world ...</div>
+	</div>
+</div>
+
+<!-- ----------------------------------------------------------------Left side menu bar---------------------------------------------- -->
+<!--<div style="background-color:white; height:200px;width:200px;float:left;">
+	
+</div>-->
+
+<!-- -----------------------------------------------------------------Main contents -------------------------------------------------- -->
+<div style="height:100%;width:60%;float:left;" >
+		<article class="article" style="margin-left:20px" >
+			<div>
+            <span  align="center" style="color:Red;background-color:White;font-size:larger;" ng-show="successfull">Post Successfully!!!!</span>
+
+					&nbsp;&nbsp;&nbsp;
+					<p style="font-family:Baskerville Old Face; font-size:18px"> Post The Title Here...<br/>
+					&nbsp;
+					<input style="margin-left:-16px" type = "text" ng-model="blogTitle" size="50">
+					&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;
+					<button type="button" class="btn btn-primary btn-lg" ng-click="TestApp(blogTitle,blogContents)">POST</button>
+					<button type="button" class="btn btn-primary btn-lg" ng-click="TestAppPreview(blogTitle,blogContents,file)">PREVIEW</button>
+			</div>
+					&nbsp;&nbsp;&nbsp;
+					<p style="font-family:Baskerville Old Face; font-size:18px">Contents !</p>
+                    <input type="file" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB"
+                id="UploadImage"/>    
+                   <img ngf-src="file" class="thumb" width="80" height="80">
+					<div class="container app" style="width: 120%">
+						<div text-angular="text-angular" placeholder="contents are here" name="htmlcontent" ng-model="blogContents" ta-disabled='disabled'></div>
+					</div>  					
+		</article>			
+</div>
+<br>
+  
+<!-- ----------------------------------------------------------------Right side menu bar ---------------------------------------------- -->
+<div style="background-color:white; height:500px;width:300px;float:right;">
+           <P style="font-family:Monotype Corsiva; font-size:25px" >There is no good blog <br>without great readability !</p>
+		   
+			<div style="width:300px; height:60px; ">
+				<img ng-src="{{image[5].src}}" style="height:60px; width:80px;" ></img>
+				<p>Fly directly into a fireworks display with this drone footage...</p>
+				
+			</div>
+			<br><br><br>
+			<div style="width:300px; height:60px; ">
+				<img ng-src="{{image[6].src}}" style="height:60px; width:80px;" ></img>
+				<p>How the internet is democratizing luxury...</p>
+				
+			</div>
+			<br><br><br>
+			<div style="width:300px; height:60px; ">
+				<img ng-src="{{image[7].src}}" style="height:60px; width:80px;" ></img>
+				<p>Fly directly into a fireworks display with this drone footage...</p>
+				
+			</div>
+			<br><br><br>
+			<div style="width:300px; height:60px; ">
+				<img ng-src="{{image[8].src}}" style="height:60px; width:80px;" ></img>
+				<p>How the internet is democratizing luxury...</p>
+				
+			</div>
+  </div>
+  
+<!-- ------------------------------------------------------------------------Footer ----------------------------------------------------- -->
+  <div style="background-color:black;clear:both">
+	<footer>
+		<marquee>Beautiful "BLOG" are here ....</marquee>
+      <hr>
+	</footer>
+  </div>
+<!-- -------------------------------------------------------------------Blog divider ----------------------------------------------------- -->
+
+<div class="container vertical-divider">
+  <div class="column one-third">
+    <h1>BLOGS</h1>
+  </div>
+  <div class="column two-thirds">
+    <p>Beautiful blogs are here ..............</p>
+  </div>
+</div>
+
+<div class="container vertical-divider">
+  <div class="column one-third">
+    <h3>{{title}}</h3>
+	<div ng-bind-html="item"></div>
+  </div>
+  <div class="column one-third">
+    <h3>Why "Don't worry about Money, just Travel" Is the worst advice of all time</h3>
+    <p>I have an internet acquaintance that I have been following on social media for a little over two years now, an all around nice....</p>
+  </div>
+  <div class="column one-third">
+    <h3>When you travel alone, you belong to everyone </h3>
+    <p>If travelling solo sounds terrifying, that's because you haven't realized why it can be the best way to go...</p>
+  </div>
+</div>
+
+
+
+
+ 
+</div>
+
+

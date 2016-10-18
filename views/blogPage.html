@@ -1,0 +1,148 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Awasome Blogs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js'></script>
+    <link href="\views\main.css" rel="stylesheet" type="text/css">
+</head>-->
+<div ng-controller="blogPageController" class="class1">
+    <div>
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="testLeft">
+    </div>
+    <!-- -----------------------------------------------------------------Main contents -------------------------------------------------- -->
+    <div style="height: 100%; width: 800px; float: left;">
+        <center>
+            <div>
+                <img ng-if="blogData.blogImage" ng-src="Images/{{blogData.blogImage}}" class="img-rounded" width="700"
+                    height="400" align="center">
+                   <img ng-if="!blogData.blogImage" ng-src="{{image[5].src}}" class="img-rounded" alt="{{image[1].src}}" width="700"
+                    height="400" align="center"> 
+            </div>
+            <!--<h1>Eating in Moderation</h1>-->
+            <h1>{{blogData.blogTitle}}</h1>
+        </center>
+        <div style="margin-left: 30px; border: 1px solid #eeeee8; padding: 16px 32px;">
+            <h5 style="line-height: 1.6;"/>
+            <div ng-bind-html="blogData.blogContents"></div>
+        </div>
+
+        <div ng-repeat="comment in Comments">
+            <div><i>{{comment.comment}}</i> - By <b>{{comment.name}}</b></div>
+        </div>
+        <br/>
+        <form name="form">
+        <div style="margin-left: 30px; border: 1px solid #eeeee8; padding: 16px 32px;">
+            <h3>
+                Leave a Reply 
+                <div>
+                    <div class="form-group">
+                        <label for="comment">
+                            Comment</label>
+            </h3>
+          
+            <textarea ng-model="parameters.comment" class="form-control" rows="5" id="comment"></textarea>
+            <br/>
+            <label for="usr">
+                <h3>
+                    Name *</h3>
+            </label>
+            <input type="text" ng-model="parameters.name" name="blogName" class="form-control" id="usrName" required>
+            <br>
+            <label for="usr">
+                <h3>
+                    Email *</h3>
+            </label>
+            <input type="email" ng-model="parameters.emailId" name="email" class="form-control" id="usrEmail" required>
+            <span style="color: #f25d59;" class="errMessage" ng-show="form.email.$invalid && form.email.$dirty">
+            Invalid EmailID.</span>
+            <br>
+            <label for="usr">
+                <h3>
+                    Website
+                </h3>
+            </label>
+            <input type="text" ng-model="parameters.webSite" class="form-control" id="usr">
+            <br>
+            <span style="color:Red;" ng-show="NameInvalid" class="errMessage">Enter the Name and Email Address.</span>
+            <button type="button" ng-click="InsertComment()" class="btn btn-primary btn-lg">
+                Post Comment</button>
+                
+                
+                
+        </div>
+        </form>
+    </div>
+    </div> </div>
+    <!-- ----------------------------------------------------------------Right side menu bar ---------------------------------------------- -->
+    <div class="testRight">
+        <h1>
+            Photo Gallery
+        </h1>
+        <div class="gallery cf">
+            <div>
+                <img src="../app/app-images/healthy-foods.jpg" />
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="gallery cf">
+            <div>
+               <img src="../app/app-images/Gallery/download.jpg" />
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="gallery cf">
+            <div>
+             <img src="../app/app-images/Gallery/back-to-school-tips-to-get-prepared-600x360.jpg" />
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="gallery cf">
+            <div>
+                <img src="../app/app-images/Gallery/nature-basket-nature-fruits-00383923-oJrBsc.jpg" />
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="gallery cf">
+            <div>
+                <img src="../app/app-images/Gallery/pear-honey-margarita-600x360.jpg" />
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="gallery cf">
+            <div>
+                <img src="../app/app-images/download%20(2).jpg" />
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="gallery cf">
+            <div>
+                <img src="../app/app-images/images.jpg" />
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="gallery cf">
+            <div>
+                <img src="../app/app-images/Rajarani_Temple_2.jpg" />
+            </div>
+        </div>
+    </div>
+   
+    <!-- ----------------------------------------------------------------footer ---------------------------------------------- -->
+    <div style="background-color: black; clear: both">
+        <footer>		
+	</footer>
+    </div>
+ </div>
