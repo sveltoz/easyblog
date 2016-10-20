@@ -42,7 +42,18 @@ Node Blog Application
          </ul>
       <ul class="nav navbar-nav navbar-right">
 	  {{#if user}}
-	  <li role="presentation"><a href="/users/logout"><span class="glyphicon glyphicon-user" ></span>{{user.name}} Logout</a></li>
+	    {{#if user.name}}
+	   <li role="presentation"><a href="/users/logout"><span class="glyphicon glyphicon-user" ></span>{{user.name}} Logout</a></li>
+	   {{/if}}
+	   {{#if user.facebook.name}}
+	   <li role="presentation"><a href="/users/logout"><span class="glyphicon glyphicon-user" ></span>{{user.facebook.name}} Logout</a></li>
+	   {{/if}}
+	   {{#if user.twitter.displayName}}
+	   <li role="presentation"><a href="/users/logout"><span class="glyphicon glyphicon-user" ></span>{{user.twitter.displayName}} Logout</a></li>
+	   {{/if}}
+	    {{#if user.google.name}}
+	   <li role="presentation"><a href="/users/logout"><span class="glyphicon glyphicon-user" ></span>{{ user.google.name}} Logout</a></li>
+	   {{/if}}
 	  {{else}}
 	  <li><a href=""/users/login"><span class="glyphicon glyphicon-user" ></span> Login</a></li>
       <li><a href="/users/register"><span class="glyphicon glyphicon-log-in"></span>Registration</a></li>        

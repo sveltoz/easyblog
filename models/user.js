@@ -15,7 +15,53 @@ var UserSchema = mongoose.Schema({
     },
     name:{
     type:String
+    },
+facebook: {
+    id: {
+        type: String,
+        trim: true
+    },
+    token: {
+        type: String
+    },
+    name: {
+        type: String
+    },
+    email: {
+        type: String
     }
+},
+google: {
+    id: {
+        type: String,
+        trim: true
+    },
+    token: {
+        type: String
+    },
+    name: {
+        type: String
+    },
+    email: {
+        type: String
+    }
+},
+twitter: {
+    id: {
+        type: String,
+        trim: true
+    },
+    token: {
+        type: String
+    },
+    username:
+        {
+            type: String
+        },
+    displayName: {
+        type: String
+    }
+}
 });
 
 var User = module.exports = mongoose.model('User', UserSchema);
