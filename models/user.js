@@ -110,8 +110,8 @@ module.exports.forgotPassword = function (email, res, req, callback) {
                             secureConnection: true,
                             port: 465,
                             auth: {
-                                user: "dev.net.asp@gmail.com",
-                                pass: "Wel@come123"
+                                user: "<Enter Email ID>",
+                                pass: "<Enter Password>"
                             }
                         }),
                         html: text,
