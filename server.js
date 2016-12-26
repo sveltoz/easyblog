@@ -22,8 +22,7 @@ var db = mongoose.connection;
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
-
-
+process.chdir(__dirname);
 app.set('views',path.join(__dirname,'views'));
 app.engine('handlebars', exphbs({ defaultLayout: 'layout' }));
 app.set('view engine','handlebars');
@@ -64,6 +63,14 @@ app.use(expressValidator({
 app.use(flash());
 //---------------------------------express-flash using-----------------------------
 app.use(function (req, res, next) {
+ if(req.url=='/users/login' ||req.url=='/users/register' )
+    {
+       res.locals.title=false;
+    }
+    else{
+     res.locals.title=true;
+    }
+    res.locals.Url='http://'+ req.get('host');
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');

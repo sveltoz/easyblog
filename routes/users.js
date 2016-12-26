@@ -8,10 +8,13 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var User = require('../models/user');
 var session = require('express-session');
 var CurrentUser;
+var UrlDisplay=false;
 router.get('/register', function (req, res) {
+   UrlDisplay=true;
     res.render('register');
 });
 router.get('/login', function (req, res) {
+  UrlDisplay=true;
     res.render('login');
 });
 router.get('/login/facebook',
@@ -109,9 +112,9 @@ passport.use(new LocalStrategy(
 
 
  passport.use('facebook', new FacebookStrategy({
-      clientID: 'clientID',
-      clientSecret: 'clientSecret',
-      callbackURL: 'callbackURL',
+      clientID: '1796697257212559',
+      clientSecret: '4403e4960862dc0b5536723ca932ab93',
+      callbackURL: 'http://202.88.154.118:8000/users/login/facebook/callback',
       profileFields: ['id', 'emails', 'gender', 'name']
   },
 
@@ -157,9 +160,9 @@ passport.use(new LocalStrategy(
 
   passport.use(new GoogleStrategy({
 
-        clientID        : 'clientID',
-        clientSecret    : 'clientSecret',
-        callbackURL     : 'callbackURL',
+         clientID        : '935788807691-40r74nb2dutpagt99s4fmv4lhh9vv7ur.apps.googleusercontent.com',
+        clientSecret    : 'U9wauvQgsPzlHZg8XaL8uYiM',
+        callbackURL     : 'http://202.88.154.118:8000/users/login/google/callback',
 
     },
     function(token, refreshToken, profile, done) {
@@ -201,9 +204,9 @@ passport.use(new LocalStrategy(
 
   passport.use(new TwitterStrategy({
 
-      consumerKey: 'consumerKey',
-      consumerSecret: 'consumerSecret',
-        callbackURL     : 'callbackURL'
+      consumerKey: 'ipKXnDh6walVuP0cKen1N98I1',
+      consumerSecret: 'B2goHPQwH8TB5wggP6CrxNf2lVjb26nvWpZLhRWaqH7rSUCi0c',
+        callbackURL     : 'http://202.88.154.118:8000/users/login/twitter/callback'
 
     },
     function(token, tokenSecret, profile, done) {
@@ -286,6 +289,7 @@ router.post('/login',
 
   router.get('/logout', function (req, res) {
       req.logout();
+      GetCurrentUser=null;
       req.flash('success_msg', 'You are logout');
       res.redirect('/users/login');
   });

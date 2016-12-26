@@ -32,13 +32,13 @@ Node Blog Application
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
 		<li><h2 style="font-family:Algerian; font-size:40px; color:white">MY BLOG</h2></li>
-		{{#if user}}
-        <li class="active"><a href="#/">Home</a></li>
-        <li><a href="#Final">Blogger</a></li>
-        <li><a href="#">Posts</a></li>
-        <li><a href="#">About</a></li>
-		<li><a href="#HomePage">Contacts</a></li>       
-			{{/if}}
+		
+        <<li ng-if="UrlDisplay" ng-show="UrlDisplay"><a href="{{Url}}">Home</a></li>      
+      {{#if title}} <li><a href="#/">Home</a></li>{{/if}}
+        {{#if user}}<li><a href="#Final">Blogger</a></li>{{/if}}
+         <li ng-if="UrlDisplay" ng-show="UrlDisplay"><a href="{{Url}}/#/HomePage">Contacts</a></li>    
+      		{{#if title}}<li><a href="#HomePage">Contact</a></li>{{/if}} 	      
+			
          </ul>
       <ul class="nav navbar-nav navbar-right">
 	  {{#if user}}
@@ -55,14 +55,14 @@ Node Blog Application
 	   <li role="presentation"><a href="/users/logout"><span class="glyphicon glyphicon-user" ></span>{{ user.google.name}} Logout</a></li>
 	   {{/if}}
 	  {{else}}
-	  <li><a href=""/users/login"><span class="glyphicon glyphicon-user" ></span> Login</a></li>
+	  <li><a href="/users/login"><span class="glyphicon glyphicon-user" ></span> Login</a></li>
       <li><a href="/users/register"><span class="glyphicon glyphicon-log-in"></span>Registration</a></li>        
 		{{/if}}
       </ul>
     </div>
   </div>
 </nav>     
-      <div class="row">
+      <div>
 
 <div>
 <div class="col-lg-10">
